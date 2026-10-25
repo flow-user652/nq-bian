@@ -1,0 +1,67 @@
+{
+ "score": 12,
+ "label": "Neutral",
+ "drivers": [
+  {
+   "id": "htf",
+   "name": "Higher-timeframe trend",
+   "weight": 3,
+   "value": 0,
+   "reason": "NQ 29,118 vs 20d 30,453 / 50d 29,975"
+  },
+  {
+   "id": "y10",
+   "name": "10Y yield",
+   "weight": 3,
+   "value": 1,
+   "reason": "10Y 4.99% (-11 bps over 5d)"
+  },
+  {
+   "id": "fed",
+   "name": "Rate expectations (5Y yield)",
+   "weight": 2,
+   "value": 1,
+   "reason": "5Y 4.80% (-22 bps over 10d)"
+  },
+  {
+   "id": "vix",
+   "name": "VIX / volatility",
+   "weight": 2,
+   "value": 0,
+   "reason": "VIX 19.5 (-3% over 5d)"
+  },
+  {
+   "id": "mega",
+   "name": "Mega-cap leadership",
+   "weight": 3,
+   "value": -1,
+   "reason": "Mega-cap avg -2.9% over 5d"
+  },
+  {
+   "id": "dxy",
+   "name": "DXY (US dollar)",
+   "weight": 1,
+   "value": 0,
+   "reason": "DXY 101.81 (-0.0% over 5d)"
+  },
+  {
+   "id": "brd",
+   "name": "Risk appetite / breadth",
+   "weight": 2,
+   "value": 0,
+   "reason": "1/3 risk-on (RTY>20d: 0, HYG>20d: 1, NQ>ES 5d: 0)"
+  },
+  {
+   "id": "glx",
+   "name": "Overnight move",
+   "weight": 1,
+   "value": 0,
+   "reason": "NQ -0.08% vs prior close"
+  }
+ ],
+ "updated": "2026-10-25T18:32+00:00",
+ "events": [],
+ "event_risk": false,
+ "price": 29117.75,
+ "contract": "NQZ2026"
+}
