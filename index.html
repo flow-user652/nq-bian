@@ -4,133 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NQZ2026 Macro Bias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f5f7;--card:#fff;--tx:#12161c;--mut:#6b7482;--bd:#e4e7ec;--bull:#12915a;--bear:#d6403f;--neu:#8b94a3;--bullbg:rgba(18,145,90,.1);--bearbg:rgba(214,64,63,.1);--neubg:rgba(139,148,163,.14);color-scheme:light}
-@media(prefers-color-scheme:dark){:root{--bg:#0d1015;--card:#161a22;--tx:#e9ecf1;--mut:#8a93a2;--bd:#252b36;--bull:#2fc783;--bear:#f26565;--neu:#7d8696;--bullbg:rgba(47,199,131,.12);--bearbg:rgba(242,101,101,.12);--neubg:rgba(125,134,150,.16);color-scheme:dark}}
+:root{--bg:#f2f4f7;--ink:#0f1826;--mut:#5b6678;--rule:#d8dde5;--bull:#0b7a6b;--bear:#c42b57;--neu:#7d8797;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#0b121c;--ink:#e9eef5;--mut:#92a0b4;--rule:#223043;--bull:#38c7ad;--bear:#ff6d90;--neu:#73809a;color-scheme:dark}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 16px 40px}
-.bull{--c:var(--bull);--b:var(--bullbg)}.bear{--c:var(--bear);--b:var(--bearbg)}.neu{--c:var(--neu);--b:var(--neubg)}
-header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:16px}
-.tag{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--mut)}
-h1{margin:2px 0 0;font-size:24px;letter-spacing:-.02em}
-.px{text-align:right}.px b{font-size:20px;font-variant-numeric:tabular-nums}
-.mut{color:var(--mut);font-size:12px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:14px}
-.hero{text-align:center;padding:26px 18px 20px}
-.state{font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--c)}
-.num{font-size:15px;color:var(--mut);margin-top:2px;font-variant-numeric:tabular-nums}
-.gauge{position:relative;height:8px;border-radius:4px;margin:26px 8px 8px;background:linear-gradient(90deg,var(--bear),var(--neu) 50%,var(--bull));opacity:.85}
-.zone{position:absolute;left:41%;width:18%;top:-3px;bottom:-3px;border-radius:6px;background:var(--card);opacity:.35}
-.pin{position:absolute;top:-7px;width:6px;height:22px;border-radius:3px;background:var(--tx);border:2px solid var(--card);transform:translateX(-50%);transition:left .4s}
-.ends{display:flex;justify-content:space-between;margin:0 8px;font-size:11px;color:var(--mut)}
-.chips{display:flex;justify-content:center;gap:8px;margin-top:18px;flex-wrap:wrap}
-.chip{font-size:12px;font-weight:600;padding:4px 11px;border-radius:20px;background:var(--b);color:var(--c)}
-.warn{display:none;margin-bottom:14px;padding:12px 14px;border-radius:12px;background:rgba(240,170,40,.14);border:1px solid rgba(240,170,40,.45);font-size:13px}
-.warn b{display:block;margin-bottom:2px}
-h2{font-size:13px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0 12px 12px;border-top:1px solid var(--bd);position:relative}
-.row:first-of-type{border-top:0}
-.row:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:2px;background:var(--c)}
-.nm{font-weight:600}.nm span{color:var(--mut);font-weight:400;font-size:12px;margin-left:4px}
-.why{color:var(--mut);font-size:13px}
-.pill{font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;background:var(--b);color:var(--c);white-space:nowrap}
-.hist{position:relative;display:flex;gap:3px;height:84px;margin-top:10px}
-.hist:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--bd)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:680px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) 22px max(60px,env(safe-area-inset-bottom))}
+.tone-bull{--c:var(--bull)}.tone-bear{--c:var(--bear)}.tone-neu{--c:var(--neu)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.sym{font-weight:600;font-size:17px}
+.sub{display:block;color:var(--mut);font-size:13px}
+.px{text-align:right;font-variant-numeric:tabular-nums}
+.px b{display:block;font-size:20px;font-weight:600}
+.px span{color:var(--mut);font-size:13px}
+.hero{margin:44px 0 10px}
+.verdict{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+h1{margin:0;font:700 clamp(44px,12vw,84px)/.95 Fraunces,Georgia,"Times New Roman",serif;letter-spacing:-.025em;color:var(--c)}
+.score{font:600 clamp(26px,6vw,38px)/1 Fraunces,Georgia,serif;color:var(--c);font-variant-numeric:lining-nums tabular-nums;padding-bottom:6px}
+.net{position:relative;height:12px;margin:22px 0 8px;background:var(--rule);border-radius:6px}
+.net:after,.track:after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ink);opacity:.55}
+.fill{position:absolute;top:0;bottom:0;background:var(--c);border-radius:6px;width:var(--w);transform-origin:var(--o);animation:grow .7s cubic-bezier(.2,.7,.2,1) both}
+.fill.pos{left:50%;--o:left}.fill.neg{right:50%;--o:right}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.fill{animation:none}}
+.ends{display:flex;justify-content:space-between;color:var(--mut);font-size:13px}
+.sum{margin:18px 0 0;color:var(--mut);max-width:52ch}
+.warn{display:none;margin:26px 0 0;padding:12px 0 12px 16px;border-left:3px solid #d99a1e}
+.warn b{display:block;font-weight:600}
+.warn span{color:var(--mut);font-size:14px}
+h2{font:600 22px/1.2 Fraunces,Georgia,serif;margin:56px 0 4px;letter-spacing:-.01em}
+.lede{margin:0 0 6px;color:var(--mut);font-size:14px}
+.drv{padding:18px 0;border-top:1px solid var(--rule)}
+.drv:first-of-type{border-top:0}
+.hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.nm{font-weight:600}
+.nm small{font-weight:400;color:var(--mut);margin-left:8px;font-size:13px}
+.vt{font-weight:600;color:var(--c);font-size:14px}
+.track{position:relative;height:8px;margin:12px 0 10px;background:var(--rule);border-radius:4px}
+.track .fill{border-radius:4px}
+.drv.tone-neu .track:before{content:"";position:absolute;left:50%;top:0;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--neu)}
+.why{color:var(--mut);font-size:14px;font-variant-numeric:tabular-nums}
+.hist{position:relative;display:flex;gap:3px;height:76px;margin:18px 0 8px}
+.hist:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--rule)}
 .col{flex:1;position:relative}
-.bar{position:absolute;left:0;right:0;border-radius:3px;background:var(--c);min-height:2px}
-.hl{display:flex;justify-content:space-between;margin-top:6px}
-.hrow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--bd);font-size:14px}
-footer{text-align:center;color:var(--mut);font-size:12px;margin-top:20px}
+.col i{position:absolute;left:0;right:0;background:var(--c);border-radius:2px;min-height:2px}
+.span{display:flex;justify-content:space-between;color:var(--mut);font-size:12px}
+.days{margin-top:22px}
+.day{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--rule);font-size:15px;font-variant-numeric:tabular-nums}
+.day em{font-style:normal;color:var(--mut);margin-left:8px;font-size:13px}
+.day b{font-weight:600;color:var(--c)}
+.foot{margin-top:56px;color:var(--mut);font-size:13px;max-width:56ch}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div><div class="tag">NQZ2026 · E-MINI NASDAQ-100</div><h1>Macro Bias</h1></div>
-    <div class="px"><b id="px">–</b><div class="mut" id="up">Loading…</div></div>
+<main class="page">
+  <header class="top">
+    <div><span class="sym">NQZ2026</span><span class="sub">E-mini Nasdaq-100, December 2026</span></div>
+    <div class="px"><b id="px">–</b><span id="up">Loading…</span></div>
   </header>
+
+  <section class="hero tone-neu" id="hero">
+    <div class="verdict"><h1 id="verdict">–</h1><div class="score" id="score"></div></div>
+    <div class="net" id="net"></div>
+    <div class="ends"><span>Bearish</span><span>Bullish</span></div>
+    <p class="sum" id="sum"></p>
+  </section>
 
   <div class="warn" id="warn"></div>
 
-  <section class="card hero neu" id="hero">
-    <div class="state" id="state">–</div>
-    <div class="num" id="num"></div>
-    <div class="gauge"><div class="zone"></div><div class="pin" id="pin" style="left:50%"></div></div>
-    <div class="ends"><span>Bearish</span><span>Neutral</span><span>Bullish</span></div>
-    <div class="chips" id="chips"></div>
-  </section>
-
-  <section class="card">
-    <h2>Drivers</h2>
+  <section>
+    <h2>What’s driving it</h2>
+    <p class="lede">Each bar pushes the bias left or right. Longer bars count for more.</p>
     <div id="drivers"></div>
   </section>
 
-  <section class="card">
-    <h2>Last 30 days</h2>
+  <section>
+    <h2>Past 30 days</h2>
     <div class="hist" id="hist"></div>
-    <div class="hl mut"><span id="h0"></span><span id="h1"></span></div>
-    <div id="hrows" style="margin-top:10px"></div>
+    <div class="span"><span id="h0"></span><span id="h1"></span></div>
+    <div class="days" id="days"></div>
   </section>
 
-  <footer>Updates automatically on weekdays around 8:00 ET · Data from Yahoo Finance · A directional lean, not a trade signal</footer>
-</div>
+  <p class="foot">Updates on weekday mornings around 8:00 ET using Yahoo Finance prices. It shows which way conditions lean. It is not a trade signal.</p>
+</main>
 
 <script>
-var T={bull:"Bullish",bear:"Bearish",neu:"Neutral"};
+var NAME={bull:"Bullish",bear:"Bearish",neu:"Neutral"};
 function $(i){return document.getElementById(i)}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function clear(n){while(n.firstChild)n.removeChild(n.firstChild)}
 function tone(v){return v>0?"bull":v<0?"bear":"neu"}
 function band(s){return s>=18?"bull":s<=-18?"bear":"neu"}
-function fmt(s){return (s>0?"+":s<0?"−":"")+Math.abs(s)}
-function clear(n){while(n.firstChild)n.removeChild(n.firstChild)}
+function fmt(s){return (s>0?"+":s<0?"\u2212":"")+Math.abs(s)}
+function fill(p,v){var f=el("i","fill "+(v>0?"pos":"neg"));f.style.setProperty("--w",p+"%");return f}
 
 function render(d){
   var b=band(d.score);
-  $("hero").className="card hero "+b;
-  $("state").textContent=d.label;
-  $("num").textContent="Score "+fmt(d.score)+" of ±100";
-  $("pin").style.left=((d.score+100)/2)+"%";
+  $("hero").className="hero tone-"+b;
+  $("verdict").textContent=d.label;
+  $("score").textContent=fmt(d.score);
+  var net=$("net");clear(net);
+  if(d.score!==0)net.appendChild(fill(Math.abs(d.score)/2,d.score));
   $("px").textContent=d.price?d.price.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):"–";
-  $("up").textContent="Updated "+new Date(d.updated).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  $("up").textContent="Updated "+new Date(d.updated).toLocaleString([],{weekday:"short",hour:"numeric",minute:"2-digit"});
 
   var n={bull:0,neu:0,bear:0};
   d.drivers.forEach(function(x){if(x.value!=null)n[tone(x.value)]++});
-  var chips=$("chips");clear(chips);
-  ["bull","neu","bear"].forEach(function(k){chips.appendChild(el("span","chip "+k,n[k]+" "+T[k].toLowerCase()))});
+  $("sum").textContent=n.bull+" bullish, "+n.neu+" neutral and "+n.bear+" bearish drivers.";
 
   var w=$("warn");
   if(d.events&&d.events.length){
-    clear(w);w.appendChild(el("b",null,"High-impact USD events today"));
-    w.appendChild(el("span",null,d.events.join("  ·  ")+". Consider waiting for the release and sizing down."));
+    clear(w);w.appendChild(el("b",null,"High-impact US news today"));
+    w.appendChild(el("span",null,d.events.join(", ")+". Consider waiting for the release and sizing down."));
     w.style.display="block";
   }else w.style.display="none";
 
   var dr=$("drivers");clear(dr);
   d.drivers.forEach(function(x){
-    var k=x.value==null?"neu":tone(x.value),r=el("div","row "+k),a=el("div");
-    var nm=el("div","nm",x.name);nm.appendChild(el("span",null,"weight "+x.weight));
-    a.appendChild(nm);a.appendChild(el("div","why",x.reason));
-    r.appendChild(a);r.appendChild(el("span","pill",x.value==null?"n/a":T[k]));
+    var k=x.value==null?"neu":tone(x.value),r=el("div","drv tone-"+k);
+    var hd=el("div","hd"),nm=el("span","nm",x.name);nm.appendChild(el("small",null,"weight "+x.weight));
+    hd.appendChild(nm);hd.appendChild(el("span","vt",x.value==null?"No data":NAME[k]));
+    var tr=el("div","track");
+    if(x.value)tr.appendChild(fill(x.weight/3*50,x.value));
+    r.appendChild(hd);r.appendChild(tr);r.appendChild(el("div","why",x.reason));
     dr.appendChild(r);
   });
 }
 
 function renderHist(h){
-  var keys=Object.keys(h).sort().slice(-30),box=$("hist"),rows=$("hrows");
-  clear(box);clear(rows);
-  if(!keys.length){box.appendChild(el("div","mut","No history yet."));return}
+  var keys=Object.keys(h).sort().slice(-30),box=$("hist"),days=$("days");
+  clear(box);clear(days);
+  if(!keys.length){days.appendChild(el("div","why","History fills in after each weekday update."));return}
   keys.forEach(function(k){
-    var s=h[k].score,c=el("div","col "+band(s)),bar=el("div","bar"),p=Math.max(Math.abs(s)/2,1.5);
+    var s=h[k].score,c=el("div","col tone-"+band(s)),bar=el("i"),p=Math.max(Math.abs(s)/2,2);
     bar.style.height=p+"%";if(s>=0)bar.style.bottom="50%";else bar.style.top="50%";
     c.title=k+": "+h[k].label+" "+fmt(s);c.appendChild(bar);box.appendChild(c);
   });
   $("h0").textContent=keys[0];$("h1").textContent=keys[keys.length-1];
   keys.slice(-7).reverse().forEach(function(k){
-    var s=h[k].score,r=el("div","hrow "+band(s));
-    r.appendChild(el("span",null,k+(h[k].event_risk?"  ·  event day":"")));
-    r.appendChild(el("span","pill",h[k].label+" "+fmt(s)));
-    rows.appendChild(r);
+    var s=h[k].score,r=el("div","day tone-"+band(s)),l=el("span",null,k);
+    if(h[k].event_risk)l.appendChild(el("em",null,"news day"));
+    var v=el("b",null,h[k].label+"  "+fmt(s));
+    r.appendChild(l);r.appendChild(v);days.appendChild(r);
   });
 }
 
