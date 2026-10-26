@@ -4,5 +4,11 @@
   "label": "Neutral",
   "event_risk": false,
   "price": 29117.75
+ },
+ "2026-10-26": {
+  "score": 18,
+  "label": "Bullish",
+  "event_risk": false,
+  "price": 29487.25
  }
 }
