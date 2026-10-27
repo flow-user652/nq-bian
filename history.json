@@ -10,5 +10,11 @@
   "label": "Bullish",
   "event_risk": false,
   "price": 29497.5
+ },
+ "2026-10-27": {
+  "score": 29,
+  "label": "Bullish",
+  "event_risk": false,
+  "price": 29793.5
  }
 }
