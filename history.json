@@ -18,9 +18,9 @@
   "price": 29785.5
  },
  "2026-10-28": {
-  "score": 13,
-  "label": "Neutral",
+  "score": -18,
+  "label": "Bearish",
   "event_risk": true,
-  "price": 29833.75
+  "price": 29830.75
  }
 }
