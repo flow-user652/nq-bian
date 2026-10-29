@@ -1,71 +1,70 @@
 {
- "score": -18,
- "label": "Bearish",
+ "score": -12,
+ "label": "Neutral",
  "drivers": [
   {
    "id": "htf",
    "name": "Higher-timeframe trend",
    "weight": 3,
    "value": 0,
-   "reason": "NQ 29,831 vs 20d 30,313 / 50d 29,960"
+   "reason": "NQ 29,516 vs 20d 30,258 / 50d 29,963"
   },
   {
    "id": "y10",
    "name": "10Y yield",
    "weight": 3,
    "value": 0,
-   "reason": "10Y 5.05% (-10 bps over 5d)"
+   "reason": "10Y 5.00% (+5 bps over 5d)"
   },
   {
    "id": "fed",
    "name": "Rate expectations (5Y yield)",
    "weight": 2,
    "value": 0,
-   "reason": "5Y 4.90% (-9 bps over 10d)"
+   "reason": "5Y 4.82% (-8 bps over 10d)"
   },
   {
    "id": "vix",
    "name": "VIX / volatility",
    "weight": 2,
    "value": 0,
-   "reason": "VIX 17.4 (+4% over 5d)"
+   "reason": "VIX 16.6 (-13% over 5d)"
   },
   {
    "id": "mega",
    "name": "Mega-cap leadership",
    "weight": 3,
    "value": -1,
-   "reason": "Mega-cap avg -3.4% over 5d"
+   "reason": "Mega-cap avg -2.8% over 5d"
   },
   {
    "id": "dxy",
    "name": "DXY (US dollar)",
    "weight": 1,
    "value": 0,
-   "reason": "DXY 102.37 (+0.6% over 5d)"
+   "reason": "DXY 101.95 (+0.3% over 5d)"
   },
   {
    "id": "brd",
    "name": "Risk appetite / breadth",
    "weight": 2,
-   "value": 0,
-   "reason": "2/3 risk-on (RTY>20d: 1, HYG>20d: 1, NQ>ES 5d: 0)"
+   "value": 1,
+   "reason": "3/3 risk-on (RTY>20d: 1, HYG>20d: 1, NQ>ES 5d: 1)"
   },
   {
    "id": "glx",
    "name": "Overnight move",
    "weight": 1,
-   "value": 0,
-   "reason": "NQ +0.06% vs prior close"
+   "value": -1,
+   "reason": "NQ -1.55% vs prior close"
   }
  ],
- "updated": "2026-10-28T18:37+00:00",
+ "updated": "2026-10-29T17:53+00:00",
  "events": [
-  "14:00 ET  FOMC Statement",
-  "14:00 ET  Federal Funds Rate",
-  "14:30 ET  FOMC Press Conference"
+  "08:30 ET  Advance GDP q/q",
+  "08:30 ET  Core PCE Price Index m/m"
  ],
  "event_risk": true,
- "price": 29830.75,
+ "price": 29515.5,
  "contract": "NQZ2026"
 }
