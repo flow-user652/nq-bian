@@ -7,28 +7,28 @@
    "name": "Higher-timeframe trend",
    "weight": 3,
    "value": 0,
-   "reason": "NQ 29,516 vs 20d 30,258 / 50d 29,963"
+   "reason": "NQ 29,430 vs 20d 30,254 / 50d 29,961"
   },
   {
    "id": "y10",
    "name": "10Y yield",
    "weight": 3,
    "value": 0,
-   "reason": "10Y 5.00% (+5 bps over 5d)"
+   "reason": "10Y 4.99% (+4 bps over 5d)"
   },
   {
    "id": "fed",
    "name": "Rate expectations (5Y yield)",
    "weight": 2,
    "value": 0,
-   "reason": "5Y 4.82% (-8 bps over 10d)"
+   "reason": "5Y 4.80% (-9 bps over 10d)"
   },
   {
    "id": "vix",
    "name": "VIX / volatility",
    "weight": 2,
    "value": 0,
-   "reason": "VIX 16.6 (-13% over 5d)"
+   "reason": "VIX 16.9 (-11% over 5d)"
   },
   {
    "id": "mega",
@@ -42,7 +42,7 @@
    "name": "DXY (US dollar)",
    "weight": 1,
    "value": 0,
-   "reason": "DXY 101.95 (+0.3% over 5d)"
+   "reason": "DXY 102.04 (+0.4% over 5d)"
   },
   {
    "id": "brd",
@@ -56,15 +56,15 @@
    "name": "Overnight move",
    "weight": 1,
    "value": -1,
-   "reason": "NQ -1.55% vs prior close"
+   "reason": "NQ -1.83% vs prior close"
   }
  ],
- "updated": "2026-10-29T17:53+00:00",
+ "updated": "2026-10-29T18:45+00:00",
  "events": [
   "08:30 ET  Advance GDP q/q",
   "08:30 ET  Core PCE Price Index m/m"
  ],
  "event_risk": true,
- "price": 29515.5,
+ "price": 29429.5,
  "contract": "NQZ2026"
 }
