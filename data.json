@@ -7,35 +7,35 @@
    "name": "Higher-timeframe trend",
    "weight": 3,
    "value": 0,
-   "reason": "NQ 28,519 vs 20d 30,133 / 50d 29,948"
+   "reason": "NQ 28,376 vs 20d 30,126 / 50d 29,945"
   },
   {
    "id": "y10",
    "name": "10Y yield",
    "weight": 3,
    "value": 0,
-   "reason": "10Y 4.93% (-5 bps over 5d)"
+   "reason": "10Y 4.94% (-5 bps over 5d)"
   },
   {
    "id": "fed",
    "name": "Rate expectations (5Y yield)",
    "weight": 2,
    "value": 1,
-   "reason": "5Y 4.74% (-16 bps over 10d)"
+   "reason": "5Y 4.72% (-18 bps over 10d)"
   },
   {
    "id": "vix",
    "name": "VIX / volatility",
    "weight": 2,
    "value": 0,
-   "reason": "VIX 20.7 (+7% over 5d)"
+   "reason": "VIX 22.1 (+14% over 5d)"
   },
   {
    "id": "mega",
    "name": "Mega-cap leadership",
    "weight": 3,
    "value": -1,
-   "reason": "Mega-cap avg -4.2% over 5d"
+   "reason": "Mega-cap avg -4.6% over 5d"
   },
   {
    "id": "dxy",
@@ -56,12 +56,12 @@
    "name": "Overnight move",
    "weight": 1,
    "value": -1,
-   "reason": "NQ -3.53% vs prior close"
+   "reason": "NQ -4.01% vs prior close"
   }
  ],
- "updated": "2026-10-30T17:35+00:00",
+ "updated": "2026-10-30T18:23+00:00",
  "events": [],
  "event_risk": false,
- "price": 28518.75,
+ "price": 28375.5,
  "contract": "NQZ2026"
 }
