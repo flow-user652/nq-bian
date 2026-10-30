@@ -7,64 +7,61 @@
    "name": "Higher-timeframe trend",
    "weight": 3,
    "value": 0,
-   "reason": "NQ 29,430 vs 20d 30,254 / 50d 29,961"
+   "reason": "NQ 28,519 vs 20d 30,133 / 50d 29,948"
   },
   {
    "id": "y10",
    "name": "10Y yield",
    "weight": 3,
    "value": 0,
-   "reason": "10Y 4.99% (+4 bps over 5d)"
+   "reason": "10Y 4.93% (-5 bps over 5d)"
   },
   {
    "id": "fed",
    "name": "Rate expectations (5Y yield)",
    "weight": 2,
-   "value": 0,
-   "reason": "5Y 4.80% (-9 bps over 10d)"
+   "value": 1,
+   "reason": "5Y 4.74% (-16 bps over 10d)"
   },
   {
    "id": "vix",
    "name": "VIX / volatility",
    "weight": 2,
    "value": 0,
-   "reason": "VIX 16.9 (-11% over 5d)"
+   "reason": "VIX 20.7 (+7% over 5d)"
   },
   {
    "id": "mega",
    "name": "Mega-cap leadership",
    "weight": 3,
    "value": -1,
-   "reason": "Mega-cap avg -2.8% over 5d"
+   "reason": "Mega-cap avg -4.2% over 5d"
   },
   {
    "id": "dxy",
    "name": "DXY (US dollar)",
    "weight": 1,
    "value": 0,
-   "reason": "DXY 102.04 (+0.4% over 5d)"
+   "reason": "DXY 101.95 (+0.1% over 5d)"
   },
   {
    "id": "brd",
    "name": "Risk appetite / breadth",
    "weight": 2,
-   "value": 1,
-   "reason": "3/3 risk-on (RTY>20d: 1, HYG>20d: 1, NQ>ES 5d: 1)"
+   "value": 0,
+   "reason": "2/3 risk-on (RTY>20d: 1, HYG>20d: 1, NQ>ES 5d: 0)"
   },
   {
    "id": "glx",
    "name": "Overnight move",
    "weight": 1,
    "value": -1,
-   "reason": "NQ -1.83% vs prior close"
+   "reason": "NQ -3.53% vs prior close"
   }
  ],
- "updated": "2026-10-29T18:45+00:00",
- "events": [
-  "08:30 ET  Advance GDP q/q",
-  "08:30 ET  Core PCE Price Index m/m"
- ],
- "event_risk": true,
- "price": 29429.5,
+ "updated": "2026-10-30T17:35+00:00",
+ "events": [],
+ "event_risk": false,
+ "price": 28518.75,
  "contract": "NQZ2026"
 }

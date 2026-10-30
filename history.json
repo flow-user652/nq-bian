@@ -28,5 +28,11 @@
   "label": "Neutral",
   "event_risk": true,
   "price": 29429.5
+ },
+ "2026-10-30": {
+  "score": -12,
+  "label": "Neutral",
+  "event_risk": false,
+  "price": 28518.75
  }
 }
